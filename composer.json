@@ -4,10 +4,7 @@
     "type": "library",
     "license": "ISC",
     "authors": [
-        {
-            "name": "Themecraft Studio",
-            "email": "info@themecraft.studio"
-        }
+        { "name": "Ettore Del Negro", "email": "ettore@themecraft.studio" }
     ],
     "autoload": {
         "psr-4": {
