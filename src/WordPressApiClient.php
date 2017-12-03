@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 use Pimple\Container;
 use Psr\Log\LoggerInterface;
 use Themecraft\WordPressApiClient\Endpoint\MediaEndpoint;
-use Themecraft\WordPressApiClient\Endpoint\PostsEndpointAbstract;
+use Themecraft\WordPressApiClient\Endpoint\PostsEndpoint;
 
 class WordPressApiClient extends Container
 {
@@ -41,7 +41,7 @@ class WordPressApiClient extends Container
 
         // Posts endpoint
         $this['posts'] = $this->factory(function ($api) {
-            return new PostsEndpointAbstract($api);
+            return new PostsEndpoint($api);
         });
 
         // Media endpoint
