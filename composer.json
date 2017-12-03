@@ -1,0 +1,22 @@
+{
+    "name": "themecraft/wordpress-rest-api-client",
+    "description": "WordPress REST API Client Library",
+    "type": "library",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "Themecraft Studio",
+            "email": "info@themecraft.studio"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Themecraft\\WordPressApiClient\\": "src/"
+        }
+    },
+    "require": {
+      "php": ">=7.0",
+      "guzzlehttp/guzzle": "^6.2",
+      "pimple/pimple": "^3.2"
+    }
+}
