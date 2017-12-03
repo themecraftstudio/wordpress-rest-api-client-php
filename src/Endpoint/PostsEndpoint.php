@@ -3,6 +3,7 @@
 
 namespace Themecraft\WordPressApiClient\Endpoint;
 
+use GuzzleHttp\Exception\ClientException;
 use Themecraft\WordPressApiClient\Entity\Post;
 
 
@@ -42,7 +43,13 @@ class PostsEndpoint extends PaginatedEndpoint
         if ($post)
             $this->setRequestParameter('id', $post->getId()); // Needed for prepareQueryString()
 
-        $this->httpClient->delete('', ['query' => $this->prepareQueryString()]);
+        $query = ['force' => true] + $this->prepareQueryString();
+        try {
+            $this->httpClient->delete( '/', [ 'query' => $query ] );
+        } catch (ClientException $e) {
+            if ($e->getCode() !== 404)
+                throw $e;
+        }
 
         return $this;
     }

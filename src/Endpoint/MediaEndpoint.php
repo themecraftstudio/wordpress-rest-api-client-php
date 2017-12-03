@@ -4,6 +4,7 @@
 namespace Themecraft\WordPressApiClient\Endpoint;
 
 
+use GuzzleHttp\Exception\ClientException;
 use Themecraft\WordPressApiClient\Entity\Media;
 
 class MediaEndpoint extends PaginatedEndpoint
@@ -54,7 +55,12 @@ class MediaEndpoint extends PaginatedEndpoint
 
         $query = ['force' => true] + $this->prepareQueryString();
 
-        $this->httpClient->delete('', ['query' => $query]);
+        try {
+            $this->httpClient->delete( '/', [ 'query' => $query ] );
+        } catch (ClientException $e) {
+            if ($e->getCode() !== 404)
+                throw $e;
+        }
     }
 
     /**
