@@ -4,7 +4,7 @@
 namespace Themecraft\WordPressApiClient\Endpoint;
 
 
-class TagsEndpoint extends AbstractPaginatedEndpoint
+class TagsEndpoint extends PaginatedEndpoint
 {
 
     /**

@@ -25,10 +25,6 @@ class Post extends AbstractPost
         ['name' => 'pingStatus', 'api' => 'ping_status'],
     ];
 
-    use TitlePostTrait;
-    use CustomFieldsTrait;
-    use ContentPostTrait;
-
     /** @var string */
     public $format;
 

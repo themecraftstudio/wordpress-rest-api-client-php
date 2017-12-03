@@ -6,7 +6,7 @@ namespace Themecraft\WordPressApiClient\Endpoint;
 
 use Themecraft\WordPressApiClient\Entity\Media;
 
-class MediaEndpoint extends AbstractPaginatedEndpoint
+class MediaEndpoint extends PaginatedEndpoint
 {
     const COLLECTION_ROUTE = '/wp/v2/media';
     const ENTITY_ROUTE = '/wp/v2/media/%d';

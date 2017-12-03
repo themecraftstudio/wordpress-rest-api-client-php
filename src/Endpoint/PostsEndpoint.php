@@ -9,7 +9,7 @@ use Themecraft\WordPressApiClient\Entity\Post;
 /**
  * REST API call for Post-like endpoints (e.g. news or events)
  */
-class PostsEndpoint extends AbstractPaginatedEndpoint
+class PostsEndpoint extends PaginatedEndpoint
 {
     const COLLECTION_ROUTE = '/wp/v2/posts';
     const ENTITY_ROUTE = '/wp/v2/posts/%d';

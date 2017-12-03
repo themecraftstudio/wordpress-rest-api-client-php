@@ -8,7 +8,7 @@ namespace Themecraft\WordPressApiClient\Endpoint;
  * Class PaginatedEndpoint
  * @package Tiphys\AccademiaEtrusca\ObjectsReplication\Endpoint
  */
-abstract class AbstractPaginatedEndpoint extends AbstractEndpoint
+abstract class PaginatedEndpoint extends AbstractEndpoint
 {
     const MAX_RESULTS_PER_PAGE = 100; // capped by WP REST API
 
